@@ -1,0 +1,233 @@
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #33ff33;
+    overflow: hidden;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(51, 255, 51, 0.1);
+    border-bottom: 2px solid #33ff33;
+  }
+  h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33;
+  }
+  .crt-screen {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border: 20px solid #111;
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px #33ff33;
+  }
+  #currentVideo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2em;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #33ff33;
+  }
+  iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+  }
+  .controls {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgba(51, 255, 51, 0.1);
+    border-top: 2px solid #33ff33;
+  }
+  button {
+    background-color: #000;
+    color: #33ff33;
+    border: 2px solid #33ff33;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+  }
+  button:hover {
+    background-color: #33ff33;
+    color: #000;
+    box-shadow: 0 0 10px #33ff33;
+  }
+  .crt-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+  #videoInfo {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.2em;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #33ff33;
+  }
+  @keyframes flicker {
+    0% { opacity: 0.97; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.95; }
+    20% { opacity: 0.98; }
+    25% { opacity: 0.9; }
+    30% { opacity: 0.95; }
+    35% { opacity: 0.98; }
+    40% { opacity: 0.94; }
+    45% { opacity: 0.97; }
+    50% { opacity: 0.95; }
+    55% { opacity: 0.98; }
+    60% { opacity: 0.97; }
+    65% { opacity: 0.95; }
+    70% { opacity: 0.96; }
+    75% { opacity: 0.97; }
+    80% { opacity: 0.94; }
+    85% { opacity: 0.98; }
+    90% { opacity: 0.96; }
+    95% { opacity: 0.95; }
+    100% { opacity: 0.97; }
+  }
+  body::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>YouTube Genesis Archive</h1>
+  </div>
+  
+  <div class="crt-screen">
+    <div id="currentVideo">Video #1</div>
+    <div id="videoInfo">Loading...</div>
+    <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="crt-effect"></div>
+  </div>
+  
+  <div class="controls">
+    <button onclick="changeVideo('prev')">Previous Video</button>
+    <button onclick="changeVideo('random')">Random Video</button>
+    <button onclick="changeVideo('next')">Next Video</button>
+  </div>
+</div>
+
+<script>
+  const earlyYouTubeVideos = [
+    { id: 'jNQXAC9IVRw', title: "Me at the zoo", uploader: "jawed", date: "Apr 23, 2005" },
+    { id: 'UF8uR6Z6KLc', title: "Steve Jobs' 2005 Stanford Commencement Address", uploader: "Stanford", date: "Mar 7, 2008" },
+    { id: 'rMbATaj7Il8', title: "Ronaldinho: Touch of Gold", uploader: "nikefootball", date: "Oct 19, 2005" },
+    { id: 'VKqGc18MJqg', title: "Lazy Sunday - SNL Digital Short", uploader: "thelonelyisland", date: "Dec 17, 2005" },
+    { id: 'nda_OSWeyn8', title: "Star Wars Kid", uploader: "AppleProMovies", date: "Jan 15, 2006" },
+    { id: 'qI5fcxiW1wM', title: "Happy Slip - My Mom's Accent", uploader: "HappySlip", date: "Feb 4, 2006" },
+    { id: 'zlfKdbWwruY', title: "Guitar", uploader: "guitar90", date: "Sep 11, 2005" },
+    { id: 'O_4OfD-wmGs', title: "Nokia Ringtone Trumpet", uploader: "thewirelesswizard", date: "Sep 23, 2005" },
+    { id: 'zqoAVyQwHC4', title: "Hey Clip", uploader: "toodamnfilthy", date: "Oct 2, 2005" },
+    { id: 'JzqumbhfxRo', title: "Myspace - The Movie", uploader: "FortyFPS", date: "Jan 30, 2006" },
+    { id: '6B26asyGKDo', title: "First Youtube Video Ever", uploader: "Tyler Oakley", date: "Mar 25, 2006" },
+    { id: 'xsXOUbCgVlY', title: "Mother's Day - The Easter Bunny Hates You", uploader: "BusyLittleBeavers", date: "May 13, 2006" },
+    { id: 'dMH0bHeiRNg', title: "Evolution of Dance", uploader: "judsonlaipply", date: "Apr 6, 2006" },
+    { id: 'aVhtS1ZhvAQ', title: "Lip Sync - All the Things She Said", uploader: "funtwo", date: "Nov 29, 2006" },
+    { id: 'rYEDA3JcQqw', title: "Adele - Chasing Pavements", uploader: "AdeleVEVO", date: "Feb 4, 2008" }
+  ];
+
+  let currentVideoIndex = 0;
+
+  function changeVideo(direction) {
+    const videoDisplay = document.getElementById('currentVideo');
+    const videoFrame = document.getElementById('videoFrame');
+    const videoInfoDisplay = document.getElementById('videoInfo');
+
+    if (direction === 'next') {
+      currentVideoIndex = (currentVideoIndex + 1) % earlyYouTubeVideos.length;
+    } else if (direction === 'prev') {
+      currentVideoIndex = (currentVideoIndex - 1 + earlyYouTubeVideos.length) % earlyYouTubeVideos.length;
+    } else if (direction === 'random') {
+      currentVideoIndex = Math.floor(Math.random() * earlyYouTubeVideos.length);
+    }
+
+    const video = earlyYouTubeVideos[currentVideoIndex];
+    videoDisplay.textContent = `Video #${currentVideoIndex + 1}`;
+    
+    // Show CRT effect
+    videoFrame.style.opacity = 0;
+    setTimeout(() => {
+      videoFrame.src = `https://www.youtube.com/embed/${video.id}?autoplay=1&controls=1&showinfo=0&rel=0`;
+      videoInfoDisplay.innerHTML = `<strong>${video.title}</strong><br>Uploaded by: ${video.uploader}<br>Date: ${video.date}`;
+      videoFrame.style.opacity = 1;
+    }, 500);
+  }
+
+  // Initial video load
+  changeVideo('random');
+
+  // Easter egg: Konami Code
+  let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  let konamiIndex = 0;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIndex]) {
+      konamiIndex++;
+      if (konamiIndex === konamiCode.length) {
+        alert('Konami Code activated! Unlocking secret time warp...');
+        document.body.style.animation = 'timewarp 5s linear infinite';
+        konamiIndex = 0;
+      }
+    } else {
+      konamiIndex = 0;
+    }
+  });
+</script>
+
+<style>
+@keyframes timewarp {
+  0% { filter: hue-rotate(0deg) blur(0px); }
+  50% { filter: hue-rotate(180deg) blur(5px); }
+  100% { filter: hue-rotate(360deg) blur(0px); }
+}
+</style>
+
+</body></html>
