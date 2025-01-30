@@ -1,0 +1,69 @@
+
+:root {
+    --primary: hsl(48, 45%, 63%);
+    --secondary: hsl(223, 34%, 61%);
+    --accent: hsl(235, 57%, 45%);
+    --text: var(--primary);
+    --bg: var(--secondary);
+    --spacing: 6px;
+    --radius: 11px;
+    --shadow: -4px 3px 19px 3px rgba(0,0,0,0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: linear-gradient(146deg, var(--primary), var(--secondary), var(--accent));
+    color: var(--text);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1,9;
+    background-image: linear-gradient(45deg, var(--primary) 25%, transparent 25%), linear-gradient(-45deg, var(--primary) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, var(--primary) 75%), linear-gradient(-45deg, transparent 75%, var(--primary) 75%);
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+    
+    margin: 0 auto;
+    padding: 13px;
+}
+
+
+.header {
+    background: var(--primary);
+    padding: 24px;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+    text-align: left;
+}
+
+.content-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+    padding: 13px;
+}
+
+.content-block {
+    background: linear-gradient(91deg, var(--primary), var(--secondary));
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    
+}
+
+.content-block:hover {
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1,04); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px var(--accent); }
+    50% { box-shadow: 0 0 20px var(--accent); }
+}
