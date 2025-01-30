@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tochi-Inspired Crypto Cat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #ff6600;
+        }
+        .token-info {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .buy-button {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .buy-button:hover {
+            background-color: #cc5500;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Tochi-Inspired Crypto Cat</h1>
+        <p>Meet <strong>Tochi</strong>, the hybrid crypto cat taking over the blockchain world!</p>
+        <img src="https://placekitten.com/400/300" alt="Crypto Cat" style="border-radius: 10px; max-width: 100%;">
+        <div class="token-info">
+            <p><strong>Token:</strong> $TOCHI</p>
+            <p><strong>Supply:</strong> 1,000,000,000</p>
+            <p><strong>Tax:</strong> 0%</p>
+        </div>
+        <button class="buy-button" onclick="buyTochi()">Buy $TOCHI</button>
+        <footer>
+            <p>&copy; 2025 Tochi Crypto. Not financial advice.</p>
+        </footer>
+    </div>
+
+    <script>
+        function buyTochi() {
+            window.open("https://app.uniswap.org/#/swap", "_blank");
+        }
+    </script>
+</body>
+</html>
