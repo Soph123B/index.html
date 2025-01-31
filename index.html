@@ -1,0 +1,630 @@
+<html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>$CLASSIC: Where Your Dreams Die Laughing on SOL</title><meta name="description" content="Local copy"><meta name="keywords" content="Memecoin, $CLASSIC, Rug Pull, SOL, Crypto Comedy, Tokenomics, Blockchain, Meme Apocalypse"><meta name="author" content="Your Name or Company"><link rel="icon" href="assets/favicon.ico" type="image/x-icon"><script src="assets/js/cdn.tailwindcss.com"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Russo+One&family=Sora:wght@100..800&display=swap" rel="stylesheet"><style>
+        /* ------------------------------------------------------
+           Base & Reset
+        ------------------------------------------------------ */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body,
+        main,
+        section,
+        div {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            font-family: "Russo One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
+            height: 100%;
+            /* Ensures the page height fits all content */
+        }
+
+        /* ------------------------------------------------------
+           Background (Sea) & Submarine
+        ------------------------------------------------------ */
+        .sea {
+            background: linear-gradient(rgb(100, 100, 200), rgb(30, 30, 100));
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .mound {
+            width: 80vw;
+            height: 30vw;
+            position: absolute;
+            bottom: -17vw;
+            left: 34vw;
+            border-radius: 50%;
+            background-color: rgb(0, 0, 70);
+        }
+
+        /* Submarine Container & Animation */
+        .submarine-container {
+            width: 22vw;
+            height: 13vw;
+            animation: sub-explore 20s linear infinite;
+            will-change: transform;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes sub-explore {
+            0% {
+                transform: translate(110vw, 20vw);
+            }
+
+            40% {
+                transform: translate(-20vw, 50vw);
+            }
+
+            41% {
+                transform: translate(-40vw, 80vw);
+            }
+
+            50% {
+                transform: translate(-40vw, 80vw) rotateY(180deg);
+            }
+
+            80% {
+                transform: translate(50vw, 80vw) rotateY(180deg);
+            }
+
+            100% {
+                transform: translate(110vw, 50vw) rotateY(180deg);
+            }
+        }
+
+        /* Submarine Parts */
+        .s-top {
+            background-color: yellow;
+            width: 7vw;
+            height: 7vw;
+            border-radius: 3.5vw 3.5vw 0 0;
+            margin-left: 6vw;
+            transform: translateY(0.5vw);
+        }
+
+        .yellow-submarine {
+            background-color: yellow;
+            width: 22vw;
+            height: 6vw;
+            border-radius: 3vw;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .s-window {
+            background-color: skyblue;
+            width: 5vw;
+            height: 5vw;
+            border-radius: 50%;
+            border: 0.75vw solid orange;
+            margin: 0 auto;
+            transform: translateY(1vw);
+        }
+
+        .s-windows-small {
+            width: 15vw;
+            height: 6vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateX(-1vw);
+        }
+
+        .s-window-small {
+            background-color: skyblue;
+            width: 3vw;
+            height: 3vw;
+            border-radius: 50%;
+            border: 0.75vw solid orange;
+        }
+
+        .s-light-bulb {
+            background-color: yellow;
+            width: 2vw;
+            height: 2vw;
+            border-radius: 0 50% 50% 0;
+            border-left: 0.5vw solid orange;
+            transform: translateX(-10vw);
+        }
+
+        .s-light {
+            background: linear-gradient(90deg, transparent, rgba(250, 250, 250, 0.75));
+            width: 12vw;
+            height: 6vw;
+            border-top-right-radius: 10vw 3vw;
+            border-bottom-right-radius: 10vw 3vw;
+            transform: translateX(-10.5vw);
+        }
+
+        .s-propellers {
+            width: 1vw;
+            height: 6vw;
+            transform: translateX(1vw);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: propeller-spin 0.5s linear infinite;
+            will-change: transform;
+        }
+
+        .s-propeller {
+            background-color: orange;
+            width: 1vw;
+            height: 2.5vw;
+            border-radius: 50%;
+        }
+
+        @keyframes propeller-spin {
+            to {
+                transform: translateX(1vw) rotateX(180deg);
+            }
+        }
+
+        /* Sea Plants */
+        .seaplant {
+            width: 3vw;
+            height: 12vw;
+            position: absolute;
+            bottom: 0;
+            left: 20vw;
+            border-radius: 50% 50% 40% 40%;
+            background-color: rgb(0, 100, 30);
+        }
+
+        .seaplant:nth-of-type(1) {
+            left: 20vw;
+        }
+
+        .seaplant:nth-of-type(2) {
+            left: 23vw;
+            height: 15vw;
+        }
+
+        .seaplant:nth-of-type(3) {
+            left: 26vw;
+        }
+
+        /* ------------------------------------------------------
+           Animations
+        ------------------------------------------------------ */
+        @keyframes sub-bob {
+            0% {
+                transform: translateY(0) rotateZ(0deg);
+            }
+
+            25% {
+                transform: translateY(2vw) rotateZ(-2deg);
+            }
+
+            50% {
+                transform: translateY(0) rotateZ(0deg);
+            }
+
+            75% {
+                transform: translateY(2vw) rotateZ(4deg);
+            }
+
+            100% {
+                transform: translateY(0) rotateZ(0deg);
+            }
+        }
+
+        /* ------------------------------------------------------
+           Text & Hover Effects
+        ------------------------------------------------------ */
+        .text-highlight {
+            color: #F59E0B;
+        }
+
+        .text-light-gray {
+            color: #D1D5DB;
+        }
+
+        .text-darkbg {
+            color: #1F2937;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .button-overlay::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0.5rem;
+        }
+
+        .button-overlay:hover::after {
+            opacity: 1;
+        }
+
+        .token-item {
+            cursor: pointer;
+            transition: transform 0.2s ease-out, color 0.2s ease-out;
+        }
+
+        .token-item:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        .animate-pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .animate-wiggle {
+            animation: wiggle 1s infinite;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(-3deg);
+            }
+
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        /* Roadmap Steps */
+        .roadmap-step.step-green {
+            background: linear-gradient(to right, #38bdf8, #3b82f6);
+        }
+
+        .roadmap-step.step-pink {
+            background: linear-gradient(to right, #f472b6, #ec4899);
+        }
+
+        .roadmap-step.step-yellow {
+            background: linear-gradient(to right, #facc15, #f87171);
+        }
+
+        /* ------------------------------------------------------
+           Responsive Adjustments
+        ------------------------------------------------------ */
+        @media (max-width: 768px) {
+            .sea {
+                background: linear-gradient(rgb(80, 80, 160), rgb(20, 20, 80));
+            }
+
+            .submarine-container {
+                width: 40vw;
+                height: 25vw;
+                animation: sub-explore 30s linear infinite;
+            }
+
+            .s-top {
+                width: 15vw;
+                height: 15vw;
+                border-radius: 7.5vw 7.5vw 0 0;
+                margin-left: 7vw;
+                transform: translateY(0.5vw);
+            }
+
+            .yellow-submarine {
+                width: 40vw;
+                height: 10vw;
+            }
+
+            .s-window {
+                width: 7vw;
+                height: 7vw;
+            }
+
+            .s-windows-small {
+                width: 20vw;
+                height: 8vw;
+                transform: translateX(-1.5vw);
+            }
+
+            .s-window-small {
+                width: 4vw;
+                height: 4vw;
+            }
+
+            .s-light-bulb {
+                width: 3vw;
+                height: 3vw;
+                transform: translateX(-12vw);
+            }
+
+            .s-light {
+                width: 16vw;
+                height: 8vw;
+                transform: translateX(-12vw);
+            }
+
+            .s-propellers {
+                width: 1.5vw;
+                height: 8vw;
+            }
+
+            .s-propeller {
+                height: 3vw;
+            }
+
+            .seaplant {
+                width: 5vw;
+                height: 20vw;
+            }
+
+            .mound {
+                width: 100vw;
+                height: 40vw;
+                left: 30vw;
+                bottom: -20vw;
+            }
+
+            header,
+            section {
+                padding: 2rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .button-overlay {
+                width: 32vw;
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .submarine-container {
+                width: 60vw;
+                height: 35vw;
+                animation: sub-explore 40s linear infinite;
+            }
+
+            .s-top {
+                width: 20vw;
+                height: 20vw;
+                border-radius: 10vw 10vw 0 0;
+                margin-left: 8vw;
+                transform: translateY(0.5vw);
+            }
+
+            .yellow-submarine {
+                width: 60vw;
+                height: 15vw;
+            }
+
+            .s-window {
+                width: 9vw;
+                height: 9vw;
+            }
+
+            .s-windows-small {
+                width: 25vw;
+                height: 10vw;
+                transform: translateX(-2vw);
+            }
+
+            .s-window-small {
+                width: 5vw;
+                height: 5vw;
+            }
+
+            .s-light-bulb {
+                width: 4vw;
+                height: 4vw;
+                transform: translateX(-14vw);
+            }
+
+            .s-light {
+                width: 20vw;
+                height: 10vw;
+                transform: translateX(-14vw);
+            }
+
+            .s-propellers {
+                width: 2vw;
+                height: 10vw;
+            }
+
+            .s-propeller {
+                height: 4vw;
+            }
+
+            .seaplant {
+                width: 6vw;
+                height: 25vw;
+            }
+
+            .mound {
+                width: 120vw;
+                height: 50vw;
+                left: 25vw;
+                bottom: -25vw;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .button-overlay {
+                width: 40vw;
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style></head><body><div id="hero-wrapper" class="relative w-full h-auto"><header class="flex flex-col items-center justify-center bg-transparent z-20 py-16"><div class="text-center text-white px-4"><h1 class="text-5xl font-bold mb-16 bg-gradient-to-r from-yellow-300 via-pink-300 to-red-300 bg-clip-text text-transparent">
+                    The Inevitable Decline of <span class="bg-gradient-to-r from-blue-500 via-teal-400 to-green-500 bg-clip-text text-transparent">$CLASSIC</span>
+                    Meme King
+                </h1><div class="flex justify-center space-x-12 mb-12"><a href="https://x.com/ClassicDuckSOL" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform"><div class="p-1 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500"><img src="assets/images/x.png" alt="X (Twitter)" class="w-16 h-16 rounded-full bg-white"></div></a><a href="https://t.me/ClassicDuckSOL" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform"><div class="p-1 rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500"><img src="assets/images/telegram.png" alt="Telegram" class="w-16 h-16 rounded-full bg-white"></div></a><a href="https://www.meteora.ag" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform"><div class="p-1 rounded-full bg-gradient-to-r from-green-500 via-yellow-500 to-orange-500"><img src="assets/images/meteora.png" alt="Meteora" class="w-16 h-16 rounded-full bg-white"></div></a></div><div class="flex items-center justify-center space-x-6 mb-12 sm:space-x-4"><img src="assets/images/classic.png" alt="Classic Duck Mascot" class="w-48 animate-float"></div><div class="flex items-center justify-center space-x-6 mt-6"><a href="https://dexscreener.com/solana/2wawtvmb3dwhwfpnvprhchfn8jgbvlvujqfmlpfamoon" target="_blank" rel="noopener noreferrer" class="relative button-overlay w-40 px-8 py-4 rounded-lg shadow-md bg-gradient-to-r from-green-400 to-blue-400 text-gray-800 font-semibold hover:from-green-500 hover:to-blue-500 transition-all">
+                        Buy
+                    </a><button class="relative button-overlay w-40 px-8 py-4 rounded-lg shadow-md bg-gradient-to-r from-purple-400 to-pink-400 text-gray-800 font-semibold hover:from-purple-500 hover:to-pink-500 transition-all">
+                        Chart
+                    </button></div><br><p class="text-xl mb-8 bg-gradient-to-r from-blue-300 via-purple-300 to-green-300 bg-clip-text text-transparent">
+                    Ever seen your wallet shrink faster than an ice cube in hell? <span class="bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent">"Bro,
+                        my coin just vanished into thin air!"</span>
+                    Or your buddy arriving late like, <span class="bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">"Sorry,
+                        my alarm was on Mars time"?</span>
+                    That’s not misfortune or a cosmic screw-up — that’s <span class="bg-gradient-to-r from-orange-500 via-red-400 to-purple-500 bg-clip-text text-transparent">$CLASSIC</span>.
+                    
+                    Every time life throws you a curveball, you just chuckle and mutter, 
+                    "<i class="bg-gradient-to-r from-pink-400 via-red-300 to-yellow-300 bg-clip-text text-transparent">Oh,
+                        this is just another <span class="bg-gradient-to-r from-purple-400 via-blue-400 to-teal-400 bg-clip-text text-transparent">$CLASSIC</span>
+                        moment.</i>" 🦆💸 
+                    Join the <span class="bg-gradient-to-r from-teal-300 via-blue-500 to-purple-500 bg-clip-text text-transparent">cult
+                        of memes</span> where laughing at life’s absurdities is our <span class="bg-gradient-to-r from-orange-400 via-pink-400 to-red-500 bg-clip-text text-transparent">$CLASSIC</span>
+                    ritual!
+                </p></div></header><section id="tokenomics" class="p-8 bg-transparent"><h2 class="text-4xl font-bold text-center bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 bg-clip-text text-transparent mb-6">
+                Classic Duck Tokenomics
+            </h2><p class="text-2xl font-semibold text-center bg-gradient-to-r from-blue-500 via-teal-400 to-purple-500 bg-clip-text text-transparent mb-8"><span class="bg-gradient-to-r from-green-400 via-yellow-500 to-red-400 bg-clip-text text-transparent">Duckonomics
+                    101:</span> Where Supply Meets Chaos
+            </p><ul class="text-lg text-center space-y-6"><li class="token-item"><strong class="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">Total
+                        Supply:</strong><span class="bg-gradient-to-r from-green-300 via-teal-300 to-blue-300 bg-clip-text text-transparent">
+                        1,000,000,000
+                    </span></li><li class="token-item"><strong class="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">Circulating
+                        Supply:</strong></li><li class="token-item"><strong class="bg-gradient-to-r from-teal-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Team
+                        Allocation:</strong><span class="bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent">
+                        0
+                    </span></li><li class="token-item"><strong class="bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">Fees:</strong><span class="bg-gradient-to-r from-green-300 via-teal-300 to-blue-300 bg-clip-text text-transparent">
+                        0%
+                    </span></li></ul></section><section id="roadmap" class="mt-4 p-8 bg-transparent"><h2 class="text-4xl font-bold text-center bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent mb-6">
+                The 
+                Duck Rugmap
+            </h2><div class="flex flex-col items-center space-y-8"><div class="roadmap-step step-green w-full sm:w-4/5 md:w-3/4 p-6 rounded-lg text-white text-center font-semibold transition-transform transform hover:scale-105 shadow-lg"><h3 class="text-2xl mb-2">1. Hatch the Egg</h3><p class="text-sm">Launch the memecoin, rally the Duck Army, and quack loud enough to attract
+                        attention!</p></div><div class="roadmap-step step-pink w-full sm:w-4/5 md:w-3/4 p-6 rounded-lg text-white text-center font-semibold transition-transform transform hover:scale-105 shadow-lg"><h3 class="text-2xl mb-2">2. Build the Nest</h3><p class="text-sm">Secure dominance in the memecoin space by convincing everyone this time it’s
+                        different.</p></div><div class="roadmap-step step-yellow w-full sm:w-4/5 md:w-3/4 p-6 rounded-lg text-white text-center font-semibold transition-transform transform hover:scale-105 shadow-lg"><h3 class="text-2xl mb-2">3. The $CLASSIC Exit</h3><p class="text-sm">Rug so hard, even the CTO tweets "Oops, it’s a $CLASSIC!" as the liquidity
+                        vanishes. 🦆</p></div></div><p class="mt-8 text-center text-lg bg-gradient-to-r from-blue-400 via-green-500 to-yellow-400 bg-clip-text text-transparent">
+                🗺️ It's all part of the $CLASSIC playbook. Remember, when in doubt, quack out! 🚨
+            </p></section><section id="where-to-buy" class="mt-8 p-8 bg-transparent"><h2 class="text-4xl font-bold text-center bg-gradient-to-r from-green-400 via-teal-400 to-blue-400 bg-clip-text text-transparent mb-6">
+                Where to Buy $CLASSIC
+            </h2><p class="text-xl text-center mb-8 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+                Ready to join the flock? Grab your $CLASSIC on Solana through user-friendly wallets and the Meteora
+                platform!
+            </p><div class="max-w-4xl mx-auto space-y-8"><div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center"><h3 class="text-2xl font-semibold bg-gradient-to-r from-blue-500 via-teal-400 to-purple-500 bg-clip-text text-transparent mb-4">
+                        Use Popular Solana Wallets
+                    </h3><p class="text-lg bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent mb-4">
+                        Set up a Solana-compatible wallet to safely store and trade your $CLASSIC tokens.
+                    </p><div class="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-12"><a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:scale-105 transition-transform"><img src="assets/images/phantom-wallet-logo.png" alt="Phantom Wallet" class="w-16 h-16 rounded-full bg-white mb-2"><span class="bg-gradient-to-r from-purple-600 via-purple-800 to-indigo-600 bg-clip-text text-transparent font-semibold">
+                                Phantom Wallet
+                            </span></a><a href="https://solflare.com/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:scale-105 transition-transform"><img src="assets/images/solflare-1.webp" alt="Solflare Wallet" class="w-16 h-16 rounded-full bg-white mb-2"><span class="bg-gradient-to-r from-orange-500 via-yellow-600 to-red-500 bg-clip-text text-transparent font-semibold">
+                                Solflare Wallet
+                            </span></a></div></div><div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center"><h3 class="text-2xl font-semibold bg-gradient-to-r from-green-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent mb-4">
+                        Trade on Meteora
+                    </h3><p class="text-lg bg-gradient-to-r from-green-500 via-blue-500 to-teal-500 bg-clip-text text-transparent">
+                        Once your wallet is loaded with SOL, head over to Meteora. Meteora provides streamlined access
+                        to
+                        liquidity and yield opportunities on Solana, making it easier to buy and manage your $CLASSIC
+                        tokens.
+                    </p><div class="mt-6"><a href="https://www.meteora.ag" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 text-white font-semibold rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-transform transform hover:scale-105">
+                            Buy $CLASSIC on Meteora
+                        </a></div></div></div></section><section id="seriousness" class="mt-8 p-8 bg-transparent"><h2 class="text-4xl font-bold text-center bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 bg-clip-text text-transparent mb-6">
+                Seriousness
+            </h2><div class="text-center max-w-4xl mx-auto"><p class="text-lg bg-gradient-to-r from-blue-300 via-green-400 to-purple-400 bg-clip-text text-transparent mb-4">
+                    Let's be real: I launched this token because my therapist bills are through the roof, and my
+                    portfolio's a memorial to every rug pull from here to the moon. You know the script: "innovative
+                    tech," "community love," "blockchain wizardry," and then... *poof*! Your cash just took a one-way
+                    trip to Crypto Hades.
+                </p><p class="text-lg bg-gradient-to-r from-teal-400 via-green-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                    Here's the degen strategy: we start with <strong>0 tokens</strong>. Nada. We'll all buy in like
+                    we're snagging the last dip before the dump. It's like a DAO where the only exit scam is the one we
+                    all agree on. The mission? To build something that's actually <em>satoshilarious</em>, not just
+                    another exit liquidity event. Because, let's face it, I'd rather moon on my own terms than fall for
+                    another "lambo or bust" fairytale.
+                </p><p class="text-lg bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
+                    This ain't about disrupting fintech or coding the next unicorn. It's about proving we can meme,
+                    laugh, and maybe—just freaking maybe—create something that doesn't crash harder than your hopes
+                    after a bear market tweet from Elon. So, if you're tired of holding bags that couldn't even buy you
+                    a cup of coffee in Venezuela, jump on board. It's a <strong>$CLASSIC</strong> rug-free ride (or at
+                    least, we're praying to Satoshi it stays that way).
+                </p></div><div class="text-center max-w-4xl mt-6 mx-auto my-8"><h2 class="text-2xl font-bold bg-gradient-to-r from-orange-400 via-yellow-500 to-green-400 bg-clip-text text-transparent mb-6">
+                    Why We Laugh and Learn
+                </h2><p class="text-lg bg-gradient-to-r from-blue-300 via-green-400 to-purple-400 bg-clip-text text-transparent mb-4">
+                    The Solana ecosystem is like a wild west of crypto—if it’s not shooting for the moon, it’s probably
+                    digging its own grave. Let’s take a peek at some of the chaos our fellow adventurers have stumbled
+                    into.
+                </p></div></section><section id="reddit-posts" class="p-8 bg-transparent max-w-4xl mx-auto space-y-8"><div class="bg-gray-100 rounded-lg shadow-lg p-6"><blockquote class="text-gray-700 italic border-l-4 border-purple-500 pl-4">
+                    “I love discussing strategies. I find a token on pump, check the bubble map, check the
+                    telegram/twitter/website are legit. Spend a few minutes in the TG checking it's active, have a
+                    chat with the dev.
+                    
+                    Buy some.
+                    
+                    Start to type on pump 'this one looks legit, bubble map good, TG active..'
+                    
+                    And then it rugs.”
+                </blockquote><p class="text-right text-gray-600 mt-4">
+                    - Posted by <a href="https://www.reddit.com/r/solana/comments/1h68yw7/comment/m0cbwzs" target="_blank" class="text-blue-500 underline">a fellow Solana enthusiast</a></p></div><div class="bg-gray-100 rounded-lg shadow-lg p-6"><blockquote class="text-gray-700 italic border-l-4 border-purple-500 pl-4">
+                    “I put in $30 EARLY on this coin. In 15 mins it shot up to what you see in the
+                    picture. Could not sell it due to ‘HIGH IMPACT’ at like 95%. What does that mean, what is slippage,
+                    could
+                    I have even pocketed a 10th of this?!?! I get it’s a ‘rug pull.’ Is there ever a way to pocket a
+                    part
+                    of the move?”
+                </blockquote><p class="text-right text-gray-600 mt-4">
+                    - Posted by <a href="https://www.reddit.com/r/solana/comments/1gxnk4u/teach_me_like_im_8_years_old/" target="_blank" class="text-blue-500 underline">
+                        another fellow enthusiast
+                    </a></p></div><div class="bg-gray-100 rounded-lg shadow-lg p-6"><blockquote class="text-gray-700 italic border-l-4 border-purple-500 pl-4">
+                    “I mean, the only reason it pumped was ‘cause he rugged.”
+                </blockquote><p class="text-right text-gray-600 mt-4">
+                    - Posted by <a href="https://www.reddit.com/r/solana/comments/1gvl6da/comment/ly2x8vy/" target="_blank" class="text-blue-500 underline">
+                        yet another wise Redditor
+                    </a></p></div></section><footer class="bg-gray-900 text-center py-4 mt-36"><p class="text-sm text-gray-400">
+                &copy; CLASSIC 2024. All rights reserved.
+            </p></footer></div><main><section class="sea"><div class="mound"></div><div class="submarine-container"><div class="s-top"><div class="s-window"></div></div><div class="yellow-submarine"><div class="s-light"></div><div class="s-light-bulb"></div><div class="s-windows-small"><div class="s-window-small"></div></div><div class="s-propellers"><div class="s-propeller"></div></div></div></div><div class="seaplant"></div></section></main></body></html>
